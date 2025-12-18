@@ -1,0 +1,212 @@
+/* JCI MINING — shared styles (light theme, stronger image exposure) */
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --primary: #ffc107;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  /* Lighter overlay for more image exposure */
+  --overlay-top: .25;
+  --overlay-bottom: .40;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header { background: #fff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10; }
+.navbar { display: flex; align-items: center; gap: 24px; padding: 14px 0; }
+.brand { font-weight: 700; letter-spacing: 0.5px; font-size: 20px; color: var(--primary); }
+.nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav-links a { color: #334155; padding: 8px 10px; border-radius: 6px; }
+.nav-links a.active, .nav-links a:hover { background: #e2e8f0; color: #111827; }
+
+/* Hero */
+.hero {
+  padding: 80px 0;
+  min-height: clamp(420px, 65vh, 820px);
+  display: flex; align-items: center;
+  background-repeat: no-repeat; background-size: cover; background-position: center;
+  background-attachment: scroll;
+  position: relative;
+}
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(rgba(255,255,255,var(--overlay-top)), rgba(255,255,255,var(--overlay-bottom))); pointer-events: none; }
+.hero-content { position: relative; z-index: 2; background: rgba(255,255,255,0.25); backdrop-filter: blur(2px); border-radius: 12px; padding: 12px 16px; display: inline-block; }
+
+/* Slideshow layered behind hero content */
+.slideshow { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; animation: fade 50s infinite ease-in-out; will-change: opacity; }
+
+/* Sequence using delays (9 images, ~8s per) */
+.slide:nth-child(1) { background-image: url('IMAGES/Coal mining.jpeg'); animation-delay: 0s; }
+.slide:nth-child(2) { background-image: url('IMAGES/Mina de oro a cielo abierto.jpeg'); animation-delay: 8s; }
+.slide:nth-child(3) { background-image: url('IMAGES/download (10).jpeg'); animation-delay: 16s; }
+.slide:nth-child(4) { background-image: url('IMAGES/Screenshot 2025-12-04 231859.png'); animation-delay: 24s; }
+.slide:nth-child(5) { background-image: url('IMAGES/Screenshot 2025-12-04 232106.png'); animation-delay: 32s; }
+.slide:nth-child(6) { background-image: url('IMAGES/Screenshot 2025-12-04 232300.png'); animation-delay: 40s; }
+.slide:nth-child(7) { background-image: url('IMAGES/Screenshot 2025-12-04 232547.png'); animation-delay: 48s; }
+.slide:nth-child(8) { background-image: url('IMAGES/Screenshot 2025-12-04 232737.png'); animation-delay: 56s; }
+.slide:nth-child(9) { background-image: url('IMAGES/Screenshot 2025-12-04 233013.png'); animation-delay: 64s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  9% { opacity: 1; }
+  12% { opacity: 0; }
+  100% { opacity: 0; }
+}
+.hero h1 { font-size: 42px; margin: 0 0 12px; }
+.hero p { margin: 0; color: var(--muted); max-width: 900px; }
+
+/* Per-page hero backgrounds, tuned positions and lighter overlay */
+.page-home .hero {
+  background-image: none;
+  background-position: center 40%;
+  justify-content: center;
+  .page-home .hero-content { text-align: center; display: block; margin: 0 auto; max-width: 1000px; background: rgba(255,255,255,0.20); }
+  .page-home .hero h1 { font-size: clamp(52px, 6vw, 96px); }
+  .page-home .hero p { font-size: clamp(18px, 2.4vw, 28px); font-weight: 600; letter-spacing: 0.5px; }
+}
+.page-services .hero {
+  background-image: linear-gradient(rgba(255,255,255,var(--overlay-top)), rgba(255,255,255,var(--overlay-bottom))), url('IMAGES/download (10).jpeg');
+  background-position: center 30%;
+}
+.page-our-people .hero {
+  background-image: linear-gradient(rgba(255,255,255,var(--overlay-top)), rgba(255,255,255,var(--overlay-bottom))), url('IMAGES/Mina de oro a cielo abierto.jpeg');
+  background-position: center 50%;
+}
+.page-equipment .hero {
+  background-image: linear-gradient(rgba(255,255,255,var(--overlay-top)), rgba(255,255,255,var(--overlay-bottom))), url('IMAGES/download (10).jpeg');
+  background-position: center 35%;
+}
+.page-contact-us .hero {
+  background-image: linear-gradient(rgba(255,255,255,var(--overlay-top)), rgba(255,255,255,var(--overlay-bottom))), url('IMAGES/Coal mining.jpeg');
+  background-position: center 45%;
+}
+.page-about .hero {
+  background-image: linear-gradient(rgba(255,255,255,var(--overlay-top)), rgba(255,255,255,var(--overlay-bottom))), url('IMAGES/Mina de oro a cielo abierto.jpeg');
+  background-position: center 50%;
+}
+
+/* Sections */
+.section { padding: 28px 0; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.page-contact-us .card-grid { grid-template-columns: 1fr; }
+.card { background: var(--card); border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+.card h3 { margin-top: 0; }
+/* Icon styling for equipment grid */
+.icon { width: 40px; height: 40px; color: #334155; display: inline-block; }
+.card .icon { margin-bottom: 8px; }
+/* Responsive map for contact-us page */
+.page-contact-us iframe { width: 100%; aspect-ratio: 600/450; height: auto; }
+
+/* Footer */
+.site-footer { border-top: 1px solid #e5e7eb; margin-top: 32px; color: var(--muted); background: #fff; }
+.site-footer .container { padding: 20px 0; }
+
+/* Dropdown styles */
+.service-select-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.service-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 16px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none; /* Remove default arrow for custom styling */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.service-select:hover {
+  border-color: var(--primary);
+}
+
+.service-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.service-pane {
+  display: none;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.service-pane.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-pane h3 {
+  margin-top: 0;
+  color: var(--primary);
+}
+
+/* Forms */
+.input, .textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #fff; color: var(--text); }
+.textarea { min-height: 120px; }
+.button { display: inline-block; background: var(--primary); color: #1c1c1c; border: none; border-radius: 8px; padding: 10px 16px; font-weight: 600; cursor: pointer; }
+.button:hover { filter: brightness(1.05); }
+
+/* Contact form styles */
+.contact-form { margin-top: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--text); }
+.form-group label::after { content: ' *'; color: #ef4444; font-weight: bold; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; background: #fff; color: var(--text); font-size: 16px; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+.form-group input.valid { border-color: #10b981; }
+.form-group input.invalid { border-color: #ef4444; }
+.form-group textarea.valid { border-color: #10b981; }
+.form-group textarea.invalid { border-color: #ef4444; }
+.button:disabled { background: #9ca3af; cursor: not-allowed; opacity: 0.6; }
+.button:disabled:hover { filter: none; }
+
+/* Responsive form adjustments */
+@media (max-width: 640px) {
+  .form-group input, .form-group textarea { font-size: 16px; /* Prevents zoom on iOS */ }
+}
+
+/* Responsive tuning */
+@media (max-width: 640px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  /* Slightly stronger overlay on small screens for text readability */
+  :root { --overlay-top: .25; --overlay-bottom: .40; }
+}
+
+@media (min-width: 1024px) { .hero { background-attachment: fixed; } }
+@media (min-width: 1024px) {
+  :root { --overlay-top: .05; --overlay-bottom: .12; }
+  .hero { background-attachment: fixed; min-height: clamp(600px, 75vh, 1000px); padding: 96px 0; }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JCI MINING — About</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body class="page-about">
+  <header class="site-header">
+    <div class="container navbar">
+      <div class="brand">JCI MINING</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="our-people.html">Our People</a>
+        <a href="equipment.html">Equipment</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>About JCI MINING</h1>
+      <p>Mining and construction specialists focused on safety and performance.</p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <label for="directorsSelect" class="service-select-label">Directors</label>
+        <select id="directorsSelect" class="service-select">
+          <option value="matthew-abraham">Matthew Abraham</option>
+          <option value="zinz-mnisi">Zinz Mnisi</option>
+          <option value="mathew-senosi">Mathew Senosi</option>
+          <option value="greg-dane">Greg Dane</option>
+        </select>
+      </div>
+
+      <div id="directorsContent" class="card">
+        <div class="service-pane" data-director="matthew-abraham">
+          <h3>Matthew Abraham</h3>
+          <p>Executive Director (Managing)</p>
+        </div>
+        <div class="service-pane" data-director="zinz-mnisi">
+          <h3>Zinz Mnisi</h3>
+          <p>Executive Director</p>
+        </div>
+        <div class="service-pane" data-director="mathew-senosi">
+          <h3>Mathew Senosi</h3>
+          <p>Non-Executive Director</p>
+        </div>
+        <div class="service-pane" data-director="greg-dane">
+          <h3>Greg Dane</h3>
+          <p>Non-Executive Director</p>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>Our Mission</h3>
+          <p>Deliver value through responsible operations and collaborative partnerships.</p>
+        </article>
+        <article class="card">
+          <h3>Our Values</h3>
+          <p>Safety, integrity, innovation, and community impact.</p>
+        </article>
+        <article class="card">
+          <h3>Capabilities</h3>
+          <p>Full lifecycle support: design, execution, and continuous improvement.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> JCI MINING. All rights reserved.</div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

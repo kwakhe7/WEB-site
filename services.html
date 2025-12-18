@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JCI MINING — Services</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body class="page-services">
+  <header class="site-header">
+    <div class="container navbar">
+      <div class="brand">JCI MINING</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="our-people.html">Our People</a>
+        <a href="equipment.html">Equipment</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Our Services</h1>
+      <p>Integrated mining and construction solutions tailored to your project.</p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <label for="serviceSelect" class="service-select-label">Explore Services</label>
+        <select id="serviceSelect" class="service-select">
+          <option value="load-haul">Load & haul of all types of materials</option>
+          <option value="materials-handling">Materials handling</option>
+          <option value="dewatering">Dewatering</option>
+          <option value="drilling-blasting">Drilling & blasting</option>
+          <option value="plant-hire">Plant hire</option>
+          <option value="mine-planning">Mine planning</option>
+          <option value="slurry-cleaning">Cleaning of slurry ponds</option>
+          <option value="rehabilitation">Rehabilitation</option>
+          <option value="crushing-screening">Crushing and screening</option>
+        </select>
+      </div>
+  
+      <div id="serviceContent" class="card">
+        <div class="service-pane" data-service="load-haul">
+          <h3>Load & Haul</h3>
+          <p>Efficient loading and hauling of overburden, ore, and waste across varied conditions with optimized fleet dispatch and cycle-time management.</p>
+        </div>
+        <div class="service-pane" data-service="materials-handling">
+          <h3>Materials Handling</h3>
+          <p>Stockpiling, rehandling, and feeding of processing plants with safe, controlled material flow and minimized spillage.</p>
+        </div>
+        <div class="service-pane" data-service="dewatering">
+          <h3>Dewatering</h3>
+          <p>Pit and bench dewatering using pumps and boreholes to maintain safe working conditions and reduce downtime.</p>
+        </div>
+        <div class="service-pane" data-service="drilling-blasting">
+          <h3>Drilling & Blasting</h3>
+          <p>Production and presplit drilling with controlled blasting to achieve target fragmentation and slope stability.</p>
+        </div>
+        <div class="service-pane" data-service="plant-hire">
+          <h3>Plant Hire</h3>
+          <p>Flexible equipment rental from excavators and ADTs to dozers and graders, supplied with experienced operators.</p>
+        </div>
+        <div class="service-pane" data-service="mine-planning">
+          <h3>Mine Planning</h3>
+          <p>Short- to medium-term planning, scheduling, and reporting aligned to production targets and safety standards.</p>
+        </div>
+        <div class="service-pane" data-service="slurry-cleaning">
+          <h3>Cleaning of Slurry Ponds</h3>
+          <p>Safe de-slurrying, rehabilitation, and maintenance of ponds to restore capacity and reduce environmental risk.</p>
+        </div>
+        <div class="service-pane" data-service="rehabilitation">
+          <h3>Rehabilitation</h3>
+          <p>Landform shaping, topsoil placement, and revegetation to meet closure criteria and stakeholder expectations.</p>
+        </div>
+        <div class="service-pane" data-service="crushing-screening">
+          <h3>Crushing and Screening</h3>
+          <p>On-site crushing, screening, and sizing to meet product specs with robust QA/QC controls.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> JCI MINING. All rights reserved.</div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
